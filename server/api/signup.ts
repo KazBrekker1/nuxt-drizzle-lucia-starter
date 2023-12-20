@@ -25,6 +25,11 @@ export default defineEventHandler(async (event) => {
 		authRequest.setSession(session);
 		return sendRedirect(event, "/"); // redirect to profile page
 	} catch (e) {
+		if (e instanceof Error && e.name === "DatabaseError")
+			throw createError({
+				message: "A user with this email already exists",
+				statusCode: 409
+			});
 		throw createError({
 			message: "An unknown error occurred",
 			statusCode: 500

@@ -11,16 +11,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "drizzle-kit": "^0.20.7",
-    "nuxt": "^3.8.2",
-    "vue": "^3.3.12",
+    "drizzle-kit": "^0.20.9",
+    "nuxt": "^3.9.0",
+    "vue": "^3.4.3",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@lucia-auth/adapter-mysql": "^2.1.0",
     "@nuxt/ui": "^2.11.1",
     "@planetscale/database": "^1.13.0",
-    "drizzle-orm": "^0.29.1",
-    "lucia": "^2.7.5"
+    "drizzle-orm": "^0.29.2",
+    "lucia": "^2.7.6"
   }
 }

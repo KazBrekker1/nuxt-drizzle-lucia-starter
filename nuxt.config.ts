@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui"],
   experimental: {
-    viewTransition: true
-  }
-})
+    viewTransition: true,
+  },
+});

@@ -30,6 +30,8 @@ export default defineEventHandler(async (event) => {
 				message: "A user with this email already exists",
 				statusCode: 409
 			});
+		
+		console.error(e);
 		throw createError({
 			message: "An unknown error occurred",
 			statusCode: 500

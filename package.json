@@ -7,20 +7,22 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "drizzle-kit": "^0.20.9",
-    "nuxt": "^3.9.0",
-    "vue": "^3.4.3",
+    "drizzle-kit": "^0.20.12",
+    "nuxt": "^3.9.1",
+    "vue": "^3.4.13",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
     "@lucia-auth/adapter-mysql": "^2.1.0",
-    "@nuxt/ui": "^2.11.1",
+    "@nuxt/ui": "^2.12.0",
     "@planetscale/database": "^1.13.0",
-    "drizzle-orm": "^0.29.2",
-    "lucia": "^2.7.6"
+    "drizzle-orm": "^0.29.3",
+    "lucia": "^2.7.6",
+    "mysql2": "^3.7.0"
   }
 }

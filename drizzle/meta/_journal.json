@@ -1,12 +1,12 @@
 {
   "version": "5",
-  "dialect": "mysql",
+  "dialect": "sqlite",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1703078369056,
-      "tag": "0000_absurd_edwin_jarvis",
+      "when": 1707894180215,
+      "tag": "0000_bent_skin",
       "breakpoints": true
     }
   ]

@@ -4,7 +4,7 @@
 
 - Lucia
 - Drizzle ORM
-- Planetscale
+- Turso DB
 - Nuxt UI
 - TailwindCSS
 - Prettier
@@ -19,7 +19,8 @@
 ## Instructions
 
 - Open `.env.example` file and rename it to `.env`
-- Replace The `DATABASE_URL` variable to your Planetscale Database URI
+- Replace The `TURSO_DB_URL` variable to your Turso DB URL
+- Replace The `TURSO_DB_AUTH_TOKEN` variable to your Turso DB Auth Token
 
 ## Project Setup
 

@@ -21,7 +21,6 @@
     "@libsql/client": "^0.4.3",
     "@lucia-auth/adapter-sqlite": "^2.0.1",
     "@nuxt/ui": "^2.12.0",
-    "@planetscale/database": "^1.13.0",
     "drizzle-orm": "^0.29.3",
     "lucia": "^2.7.6"
   }

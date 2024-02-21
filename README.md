@@ -33,7 +33,7 @@ bun install
 ### Push schema to DB
 
 ```bash
-bun run drizzle-kit push:mysql
+bun run drizzle-kit push:sqlite
 ```
 
 ### Run Development Server

@@ -18,7 +18,7 @@
     "vue-router": "^4.3.0"
   },
   "dependencies": {
-    "@libsql/client": "^0.4.3",
+    "@libsql/client": "^0.6.0",
     "@lucia-auth/adapter-sqlite": "^2.0.1",
     "@nuxt/ui": "^2.15.1",
     "drizzle-orm": "^0.30.6",

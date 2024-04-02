@@ -3,14 +3,18 @@ definePageMeta({
   middleware: ["protected"],
 });
 
+const loading = ref(false);
+
 const user = useAuthenticatedUser();
 
 const handleLogout = async (e: Event) => {
   if (!(e.target instanceof HTMLFormElement)) return;
+  loading.value = true;
   await $fetch("/api/logout", {
     method: "POST",
     redirect: "manual",
   });
+  loading.value = false;
   await navigateTo("/login");
 };
 </script>
@@ -29,6 +33,7 @@ const handleLogout = async (e: Event) => {
           style="view-transition-name: auth-card-submit"
           type="submit"
           label="Sign out"
+          :loading="loading"
           color="red"
           block
         />

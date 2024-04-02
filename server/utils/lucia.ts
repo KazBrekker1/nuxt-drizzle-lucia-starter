@@ -1,16 +1,16 @@
 import { lucia } from "lucia";
-import { connection } from "./drizzle";
-import { planetscale } from "@lucia-auth/adapter-mysql";
+import { client } from "./drizzle";
+import { libsql } from "@lucia-auth/adapter-sqlite";
 import { h3 } from "lucia/middleware";
 
 
 export const auth = lucia({
     env: process.dev ? "DEV" : "PROD", // "PROD" if deployed to HTTPS
     middleware: h3(),
-    adapter: planetscale(connection, {
+    adapter: libsql(client, {
         key: "Key",
         user: "User",
-        session: "Session",
+        session: "Session"
     }),
     getUserAttributes: (data) => {
         return {

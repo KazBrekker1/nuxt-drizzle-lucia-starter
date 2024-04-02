@@ -2,7 +2,7 @@
   "id": "00000000-0000-0000-0000-000000000000",
   "prevId": "",
   "version": "5",
-  "dialect": "mysql",
+  "dialect": "sqlite",
   "tables": {
     "Key": {
       "name": "Key",
@@ -10,34 +10,34 @@
         "id": {
           "autoincrement": false,
           "name": "id",
-          "type": "varchar(191)",
+          "type": "numeric",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "autoincrement": false,
+          "name": "user_id",
+          "type": "numeric",
           "primaryKey": false,
           "notNull": true
         },
         "hashed_password": {
           "autoincrement": false,
           "name": "hashed_password",
-          "type": "varchar(191)",
+          "type": "numeric",
           "primaryKey": false,
           "notNull": false
-        },
-        "user_id": {
-          "autoincrement": false,
-          "name": "user_id",
-          "type": "varchar(191)",
-          "primaryKey": false,
-          "notNull": true
         }
       },
-      "compositePrimaryKeys": {
-        "Key_id": {
-          "name": "Key_id",
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "Key_id_key": {
+          "name": "Key_id_key",
           "columns": [
             "id"
-          ]
-        }
-      },
-      "indexes": {
+          ],
+          "isUnique": true
+        },
         "Key_user_id_idx": {
           "name": "Key_user_id_idx",
           "columns": [
@@ -47,14 +47,7 @@
         }
       },
       "foreignKeys": {},
-      "uniqueConstraints": {
-        "Key_id_key": {
-          "name": "Key_id_key",
-          "columns": [
-            "id"
-          ]
-        }
-      }
+      "uniqueConstraints": {}
     },
     "Session": {
       "name": "Session",
@@ -62,41 +55,41 @@
         "id": {
           "autoincrement": false,
           "name": "id",
-          "type": "varchar(191)",
-          "primaryKey": false,
+          "type": "numeric",
+          "primaryKey": true,
           "notNull": true
         },
         "user_id": {
           "autoincrement": false,
           "name": "user_id",
-          "type": "varchar(191)",
+          "type": "numeric",
           "primaryKey": false,
           "notNull": true
         },
         "active_expires": {
           "autoincrement": false,
           "name": "active_expires",
-          "type": "bigint",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         },
         "idle_expires": {
           "autoincrement": false,
           "name": "idle_expires",
-          "type": "bigint",
+          "type": "integer",
           "primaryKey": false,
           "notNull": true
         }
       },
-      "compositePrimaryKeys": {
-        "Session_id": {
-          "name": "Session_id",
+      "compositePrimaryKeys": {},
+      "indexes": {
+        "Session_id_key": {
+          "name": "Session_id_key",
           "columns": [
             "id"
-          ]
-        }
-      },
-      "indexes": {
+          ],
+          "isUnique": true
+        },
         "Session_user_id_idx": {
           "name": "Session_user_id_idx",
           "columns": [
@@ -106,14 +99,7 @@
         }
       },
       "foreignKeys": {},
-      "uniqueConstraints": {
-        "Session_id_key": {
-          "name": "Session_id_key",
-          "columns": [
-            "id"
-          ]
-        }
-      }
+      "uniqueConstraints": {}
     },
     "User": {
       "name": "User",
@@ -121,52 +107,47 @@
         "id": {
           "autoincrement": false,
           "name": "id",
-          "type": "varchar(191)",
-          "primaryKey": false,
+          "type": "numeric",
+          "primaryKey": true,
           "notNull": true
         },
         "email": {
           "autoincrement": false,
           "name": "email",
-          "type": "varchar(191)",
+          "type": "numeric",
           "primaryKey": false,
           "notNull": true
         },
         "username": {
           "autoincrement": false,
           "name": "username",
-          "type": "varchar(191)",
+          "type": "numeric",
           "primaryKey": false,
           "notNull": true
         }
       },
-      "compositePrimaryKeys": {
-        "User_id": {
-          "name": "User_id",
-          "columns": [
-            "id"
-          ]
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "uniqueConstraints": {
-        "User_email_key": {
-          "name": "User_email_key",
-          "columns": [
-            "email"
-          ]
-        },
+      "compositePrimaryKeys": {},
+      "indexes": {
         "User_id_key": {
           "name": "User_id_key",
           "columns": [
             "id"
-          ]
+          ],
+          "isUnique": true
+        },
+        "User_email_key": {
+          "name": "User_email_key",
+          "columns": [
+            "email"
+          ],
+          "isUnique": true
         }
-      }
+      },
+      "foreignKeys": {},
+      "uniqueConstraints": {}
     }
   },
-  "schemas": {},
+  "enums": {},
   "_meta": {
     "schemas": {},
     "tables": {},

@@ -1,42 +1,38 @@
-import { mysqlTable, index, primaryKey, unique, varchar, bigint } from "drizzle-orm/mysql-core"
+import { sqliteTable, uniqueIndex, index, numeric, integer } from "drizzle-orm/sqlite-core"
 
-
-export const key = mysqlTable("Key", {
-	id: varchar("id", { length: 191 }).notNull(),
-	hashedPassword: varchar("hashed_password", { length: 191 }),
-	userId: varchar("user_id", { length: 191 }).notNull(),
+export const key = sqliteTable("Key", {
+	id: numeric("id").primaryKey().notNull(),
+	userId: numeric("user_id").notNull(),
+	hashedPassword: numeric("hashed_password"),
 },
 	(table) => {
 		return {
+			idKey: uniqueIndex("Key_id_key").on(table.id),
 			userIdIdx: index("Key_user_id_idx").on(table.userId),
-			keyId: primaryKey({ columns: [table.id], name: "Key_id" }),
-			keyIdKey: unique("Key_id_key").on(table.id),
 		}
 	});
 
-export const session = mysqlTable("Session", {
-	id: varchar("id", { length: 191 }).notNull(),
-	userId: varchar("user_id", { length: 191 }).notNull(),
-	activeExpires: bigint("active_expires", { mode: "number" }).notNull(),
-	idleExpires: bigint("idle_expires", { mode: "number" }).notNull(),
+export const session = sqliteTable("Session", {
+	id: numeric("id").primaryKey().notNull(),
+	userId: numeric("user_id").notNull(),
+	activeExpires: integer("active_expires").notNull(),
+	idleExpires: integer("idle_expires").notNull(),
 },
 	(table) => {
 		return {
+			idKey: uniqueIndex("Session_id_key").on(table.id),
 			userIdIdx: index("Session_user_id_idx").on(table.userId),
-			sessionId: primaryKey({ columns: [table.id], name: "Session_id" }),
-			sessionIdKey: unique("Session_id_key").on(table.id),
 		}
 	});
 
-export const user = mysqlTable("User", {
-	id: varchar("id", { length: 191 }).notNull(),
-	email: varchar("email", { length: 191 }).notNull(),
-	username: varchar("username", { length: 191 }).notNull(),
+export const user = sqliteTable("User", {
+	id: numeric("id").primaryKey().notNull(),
+	email: numeric("email").notNull(),
+	username: numeric("username").notNull(),
 },
 	(table) => {
 		return {
-			userId: primaryKey({ columns: [table.id], name: "User_id" }),
-			userEmailKey: unique("User_email_key").on(table.email),
-			userIdKey: unique("User_id_key").on(table.id),
+			idKey: uniqueIndex("User_id_key").on(table.id),
+			emailKey: uniqueIndex("User_email_key").on(table.email),
 		}
 	});

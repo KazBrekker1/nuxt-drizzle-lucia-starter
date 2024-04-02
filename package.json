@@ -12,16 +12,16 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "drizzle-kit": "^0.20.12",
-    "nuxt": "^3.9.1",
-    "vue": "^3.4.13",
-    "vue-router": "^4.2.5"
+    "drizzle-kit": "^0.20.14",
+    "nuxt": "^3.11.1",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
   },
   "dependencies": {
     "@libsql/client": "^0.4.3",
     "@lucia-auth/adapter-sqlite": "^2.0.1",
-    "@nuxt/ui": "^2.12.0",
-    "drizzle-orm": "^0.29.3",
+    "@nuxt/ui": "^2.15.1",
+    "drizzle-orm": "^0.30.6",
     "lucia": "^2.7.6"
   }
 }
